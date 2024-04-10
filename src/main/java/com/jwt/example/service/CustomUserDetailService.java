@@ -22,9 +22,6 @@ public class CustomUserDetailService implements UserDetailsService {
 
         //load user from DataBase
 
-        User  user = userRepository.findByEmail(username).orElseThrow(() -> new RuntimeException("User not found."));
-
-
-        return user;
+        return userRepository.findByEmail(username).orElseThrow(() -> new RuntimeException("User not found."));
     }
 }
